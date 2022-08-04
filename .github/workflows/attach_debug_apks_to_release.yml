@@ -20,7 +20,8 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: ${{ env.GITHUB_REF }}
-
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
       - name: Build and attach APKs to release
         shell: bash {0}
         env:
